@@ -8,3 +8,7 @@ packages=(
     "iw"
     "smcroute"
 )
+
+# update package list
+echo "Updating package list..."
+sudo pacman -Sy
