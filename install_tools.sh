@@ -1,11 +1,14 @@
 #!/bin/bash
 
 # Package List
-packages=(
+pacman_packages=(
     "hostapd"
     "dnsmasq"
     "iproute2"
     "iw"
+)
+
+aur_packages=(
     "smcroute"
 )
 
@@ -15,6 +18,8 @@ sudo pacman -Sy
 
 echo "Installing packages..."
 sudo pacman -S --needed --noconfirm "${packages[@]}"
+
+yay -S --needed --noconfirm "${aur_packages[@]}"
 
 if [ $? -eq 0 ]; then
     echo "All packages installed successfully."
